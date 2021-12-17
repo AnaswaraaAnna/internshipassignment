@@ -1,0 +1,43 @@
+<html>
+   
+   <head>
+     {% load static %}
+     {% include "home.html" %}
+       <link rel="stylesheet" href="{% static 'sample1.css' %}">
+       <style>
+        button{
+          padding: 12px 10px;
+        border: 0;
+        background: linear-gradient(to right, #4857de 0%,#11034e63 100%); 
+        border-radius: 3px;
+        margin-top: 10px;
+        color: #fff;
+        letter-spacing: 1px;
+        font-family: 'Rubik', sans-serif;
+        }
+      </style>
+   </head>
+
+<div class="container">
+  <div class="left">
+    
+    <div class="form">
+        <form action="/log/" method="post">
+          {% csrf_token %}
+       <label>Username</label>   <br>  
+      <input type="text" class="form-field animation a3" placeholder="Type your id" name="username" required><br>
+      <br>
+      <label>Password</label>
+      <br>
+      <input type="password" class="form-field animation a4" placeholder="Password" name="password" required>
+      <br>
+      <br>
+      <button class="animation a6">LOGIN</button>
+    
+    </form>
+      
+    </div>
+  </div>
+  <div class="right"></div>
+</div>
+</html>

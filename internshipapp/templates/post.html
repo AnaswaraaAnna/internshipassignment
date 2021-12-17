@@ -1,0 +1,54 @@
+<html>
+   
+   <head>
+     {% load static %}
+     <div class="basic">
+      {% include "header.html" %}
+  </div>
+       <link rel="stylesheet" href="{% static 'sample1.css' %}">
+       <style>
+        button{
+          padding: 12px 10px;
+        border: 0;
+        background: linear-gradient(to right, #4857de 0%,#11034e63 100%); 
+        border-radius: 3px;
+        margin-top: 10px;
+        color: #fff;
+        letter-spacing: 1px;
+        font-family: 'Rubik', sans-serif;
+        
+        }
+      </style>
+   </head>
+
+<div class="container">
+  <div class="left">
+    
+    <div class="form">
+        <form action="/addpost/" method="post">
+          {% csrf_token %}
+       
+      <label>User</label>
+      <br>
+      <input type="Text" name="name1" class="form-field animation a4" value="{{uid.username}}" readonly>
+      <br><br>
+      <label>Text</label>
+      <br>
+      <input type="text" name="name2" class="form-field animation a4" required>
+      <br><br>
+      <!--<label>Created time</label>
+      <br>
+      <input type="time" name="ctime" class="form-field animation a4" required>
+      <br><br>-->
+      <label>Updated Time</label>
+      <br>
+      <input type="time" name="utime" class="form-field animation a4" required>
+      <br><br>
+      <button class="animation a6">SUBMIT</button>
+    </form>
+      
+    </div>
+  </div>
+  <div class="right"></div>
+</div>
+</html>
